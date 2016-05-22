@@ -11,14 +11,17 @@ public class Automobile
 	private int		operatingCycle;
 	private int 	currentGear;
 	private int		currentSpeed;
-	private int 	distanceTraveled;
+	private double 	distanceTraveled;
 
 	public void drive(int operatingCycle)
 	{
-		for(int count = operatingCycle; count < numberOfGears; count++)
+		System.out.println(model + " is running!");
+		for(currentGear = operatingCycle; currentGear < numberOfGears; currentGear++)
 		{
-			distanceTraveled = distanceTraveled + (currentSpeed / 60);
+			setCurrentSpeed(currentGear);
+			distanceTraveled = distanceTraveled + (currentSpeed / 60.00);
 		}
+		System.out.println(model + " has stopped!");
 	}
 	// Constructor
 	Automobile( String model, int numberOfGears)
@@ -51,7 +54,7 @@ public class Automobile
 	
 	public void setOperatingCycle( int operatingCycle) { this.operatingCycle = operatingCycle; }
 	
-	public void setCurrentSpeed() { this.currentSpeed = currentGear * 10; }
+	public void setCurrentSpeed(int gear) { this.currentSpeed = (gear * 10); }
 	
 	// Get methods
 	public String getYear() { return year; }
@@ -70,5 +73,5 @@ public class Automobile
 	
 	public int getCurrentSpeed() { return currentSpeed; }
 	
-	public int getDistanceTraveled() { return distanceTraveled; }
+	public double getDistanceTraveled() { return distanceTraveled; }
 }
