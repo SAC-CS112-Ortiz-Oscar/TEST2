@@ -1,12 +1,12 @@
 
 public class Dice 
 {
-	private int rollDice(int lowerBound, int upperBound)
+	private static int rollDice(int lowerBound, int upperBound)
 	{
 		return lowerBound + (int)(Math.random() * upperBound);
 	}
 	
-	public int throwDice(int dices)
+	public static int throwDice(int dices)
 	{
 		int diceRoll;
 		
@@ -17,5 +17,4 @@ public class Dice
 		
 		return diceRoll;
 	}
-
 }
